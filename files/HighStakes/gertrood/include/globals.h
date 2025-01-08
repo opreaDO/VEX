@@ -15,3 +15,7 @@ extern MotorGroup intake;
 extern int opposingAlliance;
 extern void intakeControl(void);
 
+// lady brown & mogo clamp
+extern Motor ladyBrown;
+extern adi::DigitalOut mogoClamp;
+extern void ladyBrownControl(void);

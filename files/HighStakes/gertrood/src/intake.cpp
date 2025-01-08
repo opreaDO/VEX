@@ -21,7 +21,7 @@ void intakeControl(void) {
         else {intake.move(127);}
         intakeOn = !intakeOn;
     }
-    if (master.get_digital(DIGITAL_L2) && (master.get_digital_new_press(DIGITAL_R2))) {
+    if (master.get_digital_new_press(DIGITAL_L2) && !(master.get_digital_new_press(DIGITAL_R2))) {
         if (intakeOn) {intake.brake();}
         else {intake.move(-127);}
         intakeOn = !intakeOn;

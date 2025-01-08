@@ -41,6 +41,7 @@
  */
 //#include "okapi/api.hpp"
 #include "EZ-Template/api.hpp"
+#include "gif-pros/gifclass.hpp"
 
 // more includes
 

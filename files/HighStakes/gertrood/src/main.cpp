@@ -3,8 +3,10 @@
 Controller master(pros::E_CONTROLLER_MASTER);
 
 void initialize() {
+	ladyBrown.set_brake_mode(E_MOTOR_BRAKE_BRAKE);
 	chassis.initialize();
 	chassis.opcontrol_curve_default_set(3.5, 3.5);
+	static Gif gif("/usd/slideshow.gif", lv_scr_act());
 }
 
 void disabled() {}
