@@ -28,6 +28,8 @@ void opcontrol() {
 	while (true) {
 		chassis.opcontrol_tank();
 		intakeControl();
+		colourSorting();
+		ladyBrownControl();
 		pros::delay(20);
 	}
 }

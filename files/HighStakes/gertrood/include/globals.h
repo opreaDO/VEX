@@ -14,6 +14,7 @@ extern Motor intakeB;
 extern MotorGroup intake;
 extern int opposingAlliance;
 extern void intakeControl(void);
+extern void colourSorting(void);
 
 // lady brown & mogo clamp
 extern Motor ladyBrown;

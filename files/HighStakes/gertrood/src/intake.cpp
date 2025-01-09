@@ -26,10 +26,11 @@ void intakeControl(void) {
         else {intake.move(-127);}
         intakeOn = !intakeOn;
     }
+}
 
-    // colour sorting 
+void colourSorting(void) {
     if ((optical.get_hue() < hueValues[opposingAlliance][0]) && (optical.get_hue() > hueValues[opposingAlliance][1]) && (intakeOn)) {
         intake.move(-127); delay(250);
-        intake.move(127);
+        intake.move(127); delay(1000); // delay before it starts detecting colours again
     }  
 }
