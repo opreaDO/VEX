@@ -1,3 +1,3 @@
 # 282S Codebase
-282S PROS Code for Gertrude (Spin Up and Over Under)
+282S PROS Code for Gertrude [High Stakes, Over Under, Spin Up]
 
