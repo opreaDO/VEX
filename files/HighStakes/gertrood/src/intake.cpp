@@ -16,15 +16,17 @@ int opposingAlliance = 0;
 int hueValues[2][2] = {{40, 320}, {280, 170}};
 
 void intakeControl(void) {
-    if (master.get_digital_new_press(DIGITAL_R2) && !(master.get_digital(DIGITAL_L2))) {
-        if (intakeOn) {intake.brake();}
-        else {intake.move(127);}
-        intakeOn = !intakeOn;
+    if (master.get_digital_new_press(DIGITAL_R1) && !(master.get_digital(DIGITAL_L1))) {
+        intake.move(127);
+        intakeOn = true;
     }
-    if (master.get_digital_new_press(DIGITAL_L2) && !(master.get_digital_new_press(DIGITAL_R2))) {
-        if (intakeOn) {intake.brake();}
-        else {intake.move(-127);}
-        intakeOn = !intakeOn;
+    if (master.get_digital_new_press(DIGITAL_L1) && !(master.get_digital(DIGITAL_R1))) {
+        intake.brake();
+        intakeOn = false;
+    }
+    if ((master.get_digital(DIGITAL_L1)) && (master.get_digital((DIGITAL_L2)))) {
+        intake.move(-127);
+        intakeOn = true;
     }
 }
 

@@ -16,7 +16,12 @@ extern int opposingAlliance;
 extern void intakeControl(void);
 extern void colourSorting(void);
 
-// lady brown & mogo clamp
+// lady brown
 extern Motor ladyBrown;
-extern adi::DigitalOut mogoClamp;
 extern void ladyBrownControl(void);
+extern Rotation rotation;
+
+// poomatics
+extern adi::DigitalOut mogoClamp;
+extern adi::DigitalOut doinker;
+extern void poomaticControl(void);
