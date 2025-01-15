@@ -3,8 +3,8 @@
 #include "pros/misc.h"
 #include "pros/rotation.hpp"
 
-Motor ladyBrown(14);
-Rotation rotation(20);
+Motor ladyBrown(1);
+Rotation rotation(2);
 bool ladyBrownOn = false;
 bool loadHeightOn = false;
 
@@ -20,6 +20,7 @@ void ladyBrownControl(void) {
     } 
     else if ((master.get_digital(DIGITAL_L2)) && !(master.get_digital(DIGITAL_R2))) {
         ladyBrown.move(-127);
+        ladyBrownOn = true;
     }
     else if (ladyBrownOn) {
         ladyBrown.brake();
