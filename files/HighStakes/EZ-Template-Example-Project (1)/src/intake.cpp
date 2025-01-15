@@ -30,6 +30,7 @@ void intakeControl(void) {
 
 void colourSorting(void) {
     if ((optical.get_hue() < hueValues[opposingAlliance][0]) && (optical.get_hue() > hueValues[opposingAlliance][1]) && (intakeOn)) {
+        delay(800); // time taken to travel up the intake before reversing. TUNE
         intake.move(-127); delay(250);
         intake.move(127); delay(1000); // delay before it starts detecting colours again
     }  
