@@ -22,7 +22,7 @@ void ladyBrownControl(void) {
         loadHeightOn = true; 
         ladyBrownOn = true;   
     }
-    else if (ladyBrownOn) {
+    else if ((ladyBrownOn) && (!loadHeightOn)) {
         ladyBrown.brake();
         ladyBrownOn = false;
     }
