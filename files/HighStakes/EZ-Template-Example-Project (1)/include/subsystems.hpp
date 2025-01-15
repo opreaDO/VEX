@@ -23,6 +23,10 @@ extern pros::adi::DigitalOut mogoClamp;
 extern pros::adi::DigitalOut doinker;
 extern void poomaticControl(void);
 
+// rgb
+extern stormlib::aRGB_manager LEDmanager;
+extern void rgb(void);
+
 // Your motors, sensors, etc. should go here.  Below are examples
 
 // inline pros::Motor intake(1);

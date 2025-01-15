@@ -42,6 +42,8 @@
 //#include "okapi/api.hpp"
 //#include "pros/api_legacy.h"
 #include "EZ-Template/api.hpp"
+#include "stormlib/api.hpp"
+#include "gif-pros/gifclass.hpp"
 
 // More includes here...
 #include "autons.hpp"

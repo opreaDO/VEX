@@ -50,10 +50,11 @@ void default_constants() {
   chassis.pid_angle_behavior_set(ez::shortest);  // Changes the default behavior for turning, this defaults it to the shortest path there
 }
 
-void moveOffLine() {
+void moveOffLine(void) {
   chassis.pid_drive_set(32_in, DRIVE_SPEED, false);
 }
 
-// . . .
-// Make your own autonomous functions here!
-// . . .
+void almostSoloAWP(void) {
+  chassis.drive_angle_set(45_deg);
+  chassis.pid_drive_set(30_in, DRIVE_SPEED, false); chassis.pid_wait();
+}

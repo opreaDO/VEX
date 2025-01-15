@@ -9,8 +9,9 @@ void initialize() {
   // Set the drive to your own constants from autons.cpp!
   default_constants();
 
-  // Initialize chassis and auton selector
   chassis.initialize();
+  LEDmanager.initialize(20);
+	static Gif gif("/usd/slideshow.gif", lv_scr_act());
   master.rumble(chassis.drive_imu_calibrated() ? "." : "---");
 }
 
@@ -37,10 +38,9 @@ void opcontrol() {
   ladyBrown.set_brake_mode(E_MOTOR_BRAKE_HOLD);
   chassis.drive_brake_set(MOTOR_BRAKE_COAST);
   intake.set_brake_mode(E_MOTOR_BRAKE_COAST);
+  rgb();
 
   while (true) {
-    // Gives you some extras to make EZ-Template ezier
-
     chassis.opcontrol_tank();  // Tank control
     ladyBrownControl();
     intakeControl();
