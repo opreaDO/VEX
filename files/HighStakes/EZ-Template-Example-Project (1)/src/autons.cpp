@@ -55,6 +55,7 @@ void moveOffLine(void) {
 }
 
 void almostSoloAWP(void) {
-  chassis.drive_angle_set(45_deg);
+  chassis.drive_angle_set(-45_deg);
   chassis.pid_drive_set(30_in, DRIVE_SPEED, false); chassis.pid_wait();
+  chassis.pid_turn_set(90_deg, TURN_SPEED);
 }

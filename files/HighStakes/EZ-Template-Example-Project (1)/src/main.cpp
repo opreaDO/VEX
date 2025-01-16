@@ -15,13 +15,17 @@ void initialize() {
   master.rumble(chassis.drive_imu_calibrated() ? "." : "---");
 }
 
-void disabled() {
-
-}
-
+void disabled() {}
 
 void competition_initialize() {
-
+  while (true) {
+		if (master.get_digital_new_press(DIGITAL_A)) {
+			opposingAlliance = !opposingAlliance;
+			if (opposingAlliance == 0) {master.print(0, 0, "RED ALLIANCE SELECTED");}
+			else {master.print(0, 0, "BLUE ALLIANCE SELECTED");}
+		}
+		delay(20);
+	}
 }
 
 void autonomous() {
