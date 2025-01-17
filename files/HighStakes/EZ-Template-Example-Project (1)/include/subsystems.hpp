@@ -15,6 +15,7 @@ extern void ladyBrownControl(void);
 extern pros::Motor intakeA;     
 extern pros::Motor intakeB;      
 extern pros:: MotorGroup intake;
+extern pros:: Optical optical;
 extern int opposingAlliance;
 extern void intakeControl(void);
 extern void colourSorting(void);

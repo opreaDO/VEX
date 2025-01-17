@@ -1,6 +1,8 @@
 #include "main.h"
 
 Controller master(pros::E_CONTROLLER_MASTER);
+double proximity = 0.0;
+string proximityString = "";
 
 void initialize() {
   pros::delay(500);  // Stop the user from doing anything while legacy ports configure
@@ -13,6 +15,7 @@ void initialize() {
   LEDmanager.initialize(20);
 	static Gif gif("/usd/slideshow.gif", lv_scr_act());
   master.rumble(chassis.drive_imu_calibrated() ? "." : "---");
+  optical.set_led_pwm(100);
 }
 
 void disabled() {}
@@ -49,7 +52,6 @@ void opcontrol() {
     ladyBrownControl();
     intakeControl();
     poomaticControl();
-
     pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
   }
 }
