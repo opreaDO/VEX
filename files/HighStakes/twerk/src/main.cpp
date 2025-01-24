@@ -5,6 +5,7 @@ void initialize() {
 	chassis.initialize();
 	chassis.opcontrol_curve_default_set(3.5);
 	optical.set_led_pwm(100);
+	chassis.opcontrol_curve_buttons_toggle(false);
 }
 
 void disabled() {}
