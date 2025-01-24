@@ -3,6 +3,8 @@
 void initialize() {
 	LEDmanager.initialize(20);
 	chassis.initialize();
+	chassis.opcontrol_curve_default_set(3.5);
+	optical.set_led_pwm(100);
 }
 
 void disabled() {}
