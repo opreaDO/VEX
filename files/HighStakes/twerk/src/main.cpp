@@ -1,8 +1,8 @@
 #include "main.h"
 
 void initialize() {
-	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hello PROS User!");
+	LEDmanager.initialize(20);
+	chassis.initialize();
 }
 
 void disabled() {}
@@ -13,6 +13,7 @@ void competition_initialize() {}
 void autonomous() {}
 
 void opcontrol() {
+	LEDmanager.rainbow();
 	while (true) {
 		pros::delay(10);
 	}
