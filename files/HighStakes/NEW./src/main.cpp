@@ -1,4 +1,7 @@
 #include "main.h"
+#include "stormlib/led.hpp"
+#include "liblvgl/widgets/lv_img.h"
+#include "pros/rtos.hpp"
 
 Controller master(pros::E_CONTROLLER_MASTER);
 
@@ -27,6 +30,10 @@ adi::DigitalOut mogoClamp(1);
 adi::DigitalOut doinker(2);
 bool clampOn = false;
 bool doinkerOn = false;
+
+stormlib::aRGB strand1(3,20);
+stormlib::aRGB strand2(4,20);
+stormlib::aRGB_manager LEDmanager(&strand1, &strand2, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr);
 
 void ladyBrownControl(void) {
     if ((master.get_digital(DIGITAL_R2)) && !(master.get_digital(DIGITAL_L2)) && (!loadHeightOn)) {
@@ -61,7 +68,7 @@ void ladyBrownControl(void) {
 
 void intakeControl(void) {
     if (master.get_digital_new_press(DIGITAL_R1) && !(master.get_digital(DIGITAL_L1))) {
-        intake.move(127);
+        intake.move(127v);
         intakeOn = true;
     }
     if (master.get_digital_new_press(DIGITAL_L1) && !(master.get_digital(DIGITAL_R1))) {
@@ -71,16 +78,6 @@ void intakeControl(void) {
     if ((master.get_digital(DIGITAL_L1)) && (master.get_digital((DIGITAL_R1)))) {
         intake.move(-80);
         intakeOn = true;
-    }
-}
-
-void colourSorting(void) {
-    if ((intakeOn)) {  
-        if ((optical.get_hue() > hueValues[allianceColour][0]) && (optical.get_hue() < hueValues[allianceColour][1])) {
-            delay(500); // time taken to travel up the intake before reversing. TUNE
-            intake.move(-127); delay(250);
-            intake.move(127); delay(250); // delay before it starts detecting colours again
-        }  
     }
 }
 
@@ -116,6 +113,7 @@ void initialize() {
   chassis.initialize();
   master.rumble(chassis.drive_imu_calibrated() ? "." : "---");
   ladyBrown.set_brake_mode(E_MOTOR_BRAKE_HOLD);
+  LEDmanager.initialize(20);
 }
 
 void disabled() {}
@@ -131,12 +129,14 @@ void autonomous() {
   chassis.drive_brake_set(MOTOR_BRAKE_HOLD);  // Set motors to hold.  This helps autonomous consistency
 
   //moveOffLine();
-  awpBlue();
+  //awpBlue();
   //awpRed();
+  driveBack();
 }
 
 void opcontrol() {
   // This is preference to what you like to drive on
+  LEDmanager.rainbow();
   chassis.drive_brake_set(MOTOR_BRAKE_COAST);
   intake.set_brake_mode(E_MOTOR_BRAKE_COAST);
 
@@ -145,7 +145,6 @@ void opcontrol() {
     ladyBrownControl();
     intakeControl();
     poomaticControl();
-    colourSorting();
 
     pros::delay(ez::util::DELAY_TIME);  // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
   }
