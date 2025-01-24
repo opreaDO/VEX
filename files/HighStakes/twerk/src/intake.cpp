@@ -1,8 +1,8 @@
 #include "main.h"
 
-Motor intakeA(8);     
-Motor intakeB(15);      
-MotorGroup intake({8, 15});
+Motor lowerStage(8);     
+Motor upperStage(15);      
+MotorGroup intake({18, 15});
 Optical optical(7);
 bool intakeOn = false;
 
@@ -15,7 +15,8 @@ int hueValues[2][2] = {{60, 300}, {180, 60}};
 
 void intakeControl(void) {
     if (master.get_digital_new_press(DIGITAL_R1) && !(master.get_digital(DIGITAL_L1))) {
-        intake.move(105);
+        lowerStage.move(127);
+        upperStage.move(105);
         intakeOn = true;
     }
     if (master.get_digital_new_press(DIGITAL_L1) && !(master.get_digital(DIGITAL_R1))) {
@@ -23,7 +24,7 @@ void intakeControl(void) {
         intakeOn = false;
     }
     if ((master.get_digital(DIGITAL_L1)) && (master.get_digital((DIGITAL_R1)))) {
-        intake.move(-60);
+        intake.move(-127);
         intakeOn = true;
     }
 }
