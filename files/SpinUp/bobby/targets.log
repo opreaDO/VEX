@@ -1,0 +1,415 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+unix build for platform vexv5
+ 
+
+# Make data base, printed on Sun Jan 22 22:35:54 2023
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# makefile (from `makefile', line 15)
+OBJ = $(addprefix $(BUILD)/, $(addsuffix .o, $(basename $(SRC_C))) )
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from `vex/mkenv.mk', line 30)
+TOOLCHAIN = ${HOME}/sdk
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/darius/Documents/bing chilling/VEX/files/bobby
+# makefile (from `vex/mkenv.mk', line 59)
+LINK = arm-none-eabi-ld
+# makefile
+SHELL = /bin/sh
+# makefile (from `vex/mkenv.mk', line 49)
+Q = @
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `vex/mkenv.mk', line 85)
+CFLAGS = ${CFLAGS_CL} ${CFLAGS_V7} -Os -Wall -Werror=return-type -ansi -std=gnu99 $(DEFINES)
+# makefile (from `vex/mkrules.mk', line 1)
+MAKEFILE_LIST :=  makefile vex/mkenv.mk vex/mkrules.mk
+# makefile (from `makefile', line 24)
+INC_F = include
+# makefile (from `vex/mkenv.mk', line 79)
+TOOL_INC = -I"$(TOOLCHAIN)/$(PLATFORM)/clang/$(HEADERS)/include" -I"$(TOOLCHAIN)/$(PLATFORM)/gcc/include"  -I"$(TOOLCHAIN)/$(PLATFORM)/gcc/include/c++/4.9.3"  -I"$(TOOLCHAIN)/$(PLATFORM)/gcc/include/c++/4.9.3/arm-none-eabi/armv7-ar/thumb"
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from `makefile', line 21)
+SRC_A = makefile
+# makefile (from `vex/mkenv.mk', line 5)
+sp := $(subst ,, )
+# environment
+VSCODE_CWD = /
+# environment
+PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/darius/.cargo/bin
+# makefile (from `vex/mkenv.mk', line 43)
+BUILD_VERBOSE = $(VERBOSE)
+# makefile (from `vex/mkenv.mk', line 22)
+PROJECT = $(notdir $(call sq,$(abspath ${CURDIR})))
+# makefile (from `vex/mkenv.mk', line 7)
+sq = $(subst $(sp),?,$1)
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `vex/mkenv.mk', line 80)
+TOOL_LIB = -L"$(TOOLCHAIN)/$(PLATFORM)/gcc/libs"
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# makefile (from `vex/mkenv.mk', line 61)
+ECHO = @echo
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4E3dbWtQ3h/Listeners
+# makefile (from `vex/mkenv.mk', line 58)
+SIZE = arm-none-eabi-size
+# automatic
+%F = $(notdir $%)
+# makefile (from `vex/mkenv.mk', line 93)
+ARCH_FLAGS = rcs
+# environment
+PWD = /Users/darius/Documents/bing chilling/VEX/files/bobby
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/darius
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# makefile (from `vex/mkenv.mk', line 62)
+DEFINES = -DVexV5
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/darius/Library/Application Support/Code/CachedData/97dec172d3256f8ca4bfb2143f3f76b503ca0534
+# environment
+LOGNAME = darius
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# makefile (from `vex/mkenv.mk', line 15)
+HEADERS = 8.0.0
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from `vex/mkenv.mk', line 73)
+MKDIR = mkdir -p "$(@D)" 2> /dev/null || :
+# makefile (from `makefile', line 4)
+VERBOSE = 0
+# environment
+XPC_FLAGS = 0x0
+# makefile (from `vex/mkenv.mk', line 92)
+PROJECTLIB = lib$(PROJECT)
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# makefile (from `vex/mkenv.mk', line 74)
+RMDIR = rm -rf
+# environment
+SHLVL = 1
+# makefile (from `vex/mkenv.mk', line 75)
+CLEAN = $(RMDIR) $(BUILD) 2> /dev/null || :
+# makefile (from `vex/mkenv.mk', line 55)
+CC = clang
+# makefile (from `vex/mkenv.mk', line 86)
+CXX_FLAGS = ${CFLAGS_CL} ${CFLAGS_V7} -Os -Wall -Werror=return-type -fno-rtti -fno-threadsafe-statics -fno-exceptions  -std=gnu++11 -ffunction-sections -fdata-sections $(DEFINES)
+# default
+MAKE_VERSION := 3.81
+# environment
+ 
+USER = darius
+# makefile
+.DEFAULT_GOAL := all
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# makefile (from `vex/mkenv.mk', line 101)
+INC = $(addprefix -I, ${INC_F}) -I"$(TOOLCHAIN)/$(PLATFORM)/include" ${TOOL_INC}
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/t7/z5spxkmd1g1cxfw212mfsjyw0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/darius/Library/Application Support/Code/1.74.3-main.sock
+# environment
+MallocNanoZone = 0
+# makefile (from `vex/mkenv.mk', line 60)
+ARCH = arm-none-eabi-ar
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.51663351.51663357
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# makefile (from `vex/mkenv.mk', line 84)
+CFLAGS_V7 = -march=armv7-a -mfpu=neon -mfloat-abi=softfp
+# makefile (from `makefile', line 13)
+SRC_C = $(wildcard src/*.cpp)  $(wildcard src/*.c) $(wildcard src/*/*.cpp)  $(wildcard src/*/*.c)
+# makefile (from `makefile', line 18)
+SRC_H = $(wildcard include/*.h)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0:2
+# environment
+COMMAND_MODE = unix2003
+# makefile (from `vex/mkenv.mk', line 10)
+PLATFORM = vexv5
+# default
+MAKEFILES := 
+# makefile (from `vex/mkenv.mk', line 11)
+BUILD = build
+# automatic
+<F = $(notdir $<)
+# makefile (from `vex/mkenv.mk', line 83)
+CFLAGS_CL = -target thumbv7-none-eabi -fshort-enums -Wno-unknown-attributes -U__INT32_TYPE__ -U__UINT32_TYPE__ -D__INT32_TYPE__=long -D__UINT32_TYPE__='unsigned long' 
+# makefile (from `vex/mkenv.mk', line 56)
+CXX = clang
+# makefile (from `vex/mkenv.mk', line 89)
+LNK_FLAGS = -nostdlib -T "$(TOOLCHAIN)/$(PLATFORM)/lscript.ld" -R "$(TOOLCHAIN)/$(PLATFORM)/stdlib_0.lib" -Map="$(BUILD)/$(PROJECT).map" --gc-section -L"$(TOOLCHAIN)/$(PLATFORM)" ${TOOL_LIB}
+# environment
+LC_ALL = C
+# makefile (from `vex/mkenv.mk', line 96)
+LIBS = --start-group -lv5rt -lstdc++ -lc -lm -lgcc --end-group
+# automatic
+^F = $(notdir $^)
+# makefile (from `vex/mkenv.mk', line 57)
+OBJCOPY = arm-none-eabi-objcopy
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+LANG = C
+# environment
+VSCODE_PID = 87135
+# makefile (from `vex/mkenv.mk', line 6)
+qs = $(subst ?,$(sp),$1)
+# variable set hash-table stats:
+# Load=96/1024=9%, Rehash=0, Collisions=7/190=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# include (device 16777225, inode 52503385): 4 files, no impossibilities.
+# . (device 16777225, inode 52503375): 11 files, no impossibilities.
+# src (device 16777225, inode 52503389): 4 files, no impossibilities.
+# src/robot-config.cpp (device 16777225, inode 52503391): could not be opened.
+# src/main.cpp (device 16777225, inode 52503390): could not be opened.
+
+# 19 files, no impossibilities in 5 directories.
+
+# Implicit Rules
+
+build/%.o: %.c include/robot-config.h include/vex.h
+#  commands to execute (from `vex/mkrules.mk', line 5):
+	$(Q)$(MKDIR)
+	$(ECHO) "CC  $<"
+	$(Q)$(CC) $(CFLAGS) $(INC) -c -o $@ $<
+	
+
+build/%.o: %.cpp include/robot-config.h include/vex.h makefile
+#  commands to execute (from `vex/mkrules.mk', line 11):
+	$(Q)$(MKDIR)
+	$(ECHO) "CXX $<"
+	$(Q)$(CXX) $(CXX_FLAGS) $(INC) -c -o $@ $<
+	
+
+# 2 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+build/libbobby.a: build/src/main.o build/src/robot-config.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `vex/mkrules.mk', line 27):
+	$(Q)$(ARCH) $(ARCH_FLAGS) $@ $^
+	
+
+all: build/bobby.bin
+#  Command-line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+vex/mkrules.mk:
+#  Implicit rule search has been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+include/robot-config.h:
+#  Implicit rule search has been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+build/bobby.elf: build/src/main.o build/src/robot-config.o
+#  Implicit rule search has not been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `vex/mkrules.mk', line 17):
+	$(ECHO) "LINK $@"
+	$(Q)$(LINK) $(LNK_FLAGS) -o $@ $^ $(LIBS)
+	$(Q)$(SIZE) $@
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+include/vex.h:
+#  Implicit rule search has been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+vex/mkenv.mk:
+#  Implicit rule search has been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `vex/mkrules.mk', line 31):
+	$(info clean project)
+	$(Q)$(CLEAN)
+	
+
+build/bobby.bin: build/bobby.elf
+#  Implicit rule search has not been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `vex/mkrules.mk', line 23):
+	$(Q)$(OBJCOPY) -O binary $(BUILD)/$(PROJECT).elf $(BUILD)/$(PROJECT).bin
+	
+
+# Not a target:
+src/robot-config.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+src/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+build/src/robot-config.o: src/robot-config.cpp include/robot-config.h include/vex.h makefile
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/robot-config'
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `vex/mkrules.mk', line 11):
+	$(Q)$(MKDIR)
+	$(ECHO) "CXX $<"
+	$(Q)$(CXX) $(CXX_FLAGS) $(INC) -c -o $@ $<
+	
+
+build/src/main.o: src/main.cpp include/robot-config.h include/vex.h makefile
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `src/main'
+#  Last modified 2023-01-22 22:35:00
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `vex/mkrules.mk', line 11):
+	$(Q)$(MKDIR)
+	$(ECHO) "CXX $<"
+	$(Q)$(CXX) $(CXX_FLAGS) $(INC) -c -o $@ $<
+	
+
+# files hash-table stats:
+# Load=16/1024=2%, Rehash=0, Collisions=4/57=7%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 3
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4059 / max = 4059 / min = 4059 / avg = 4059
+
+ 
+# Finished Make data base on Sun Jan 22 22:35:54 2023
+
+ 

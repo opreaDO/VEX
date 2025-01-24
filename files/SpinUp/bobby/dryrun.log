@@ -1,0 +1,15 @@
+make --dry-run --always-make --keep-going --print-directory
+unix build for platform vexv5
+make: Entering directory `/Users/darius/Documents/bing chilling/VEX/files/bobby'
+mkdir -p "build/src" 2> /dev/null || :
+echo "CXX src/main.cpp"
+clang -target thumbv7-none-eabi -fshort-enums -Wno-unknown-attributes -U__INT32_TYPE__ -U__UINT32_TYPE__ -D__INT32_TYPE__=long -D__UINT32_TYPE__='unsigned long'  -march=armv7-a -mfpu=neon -mfloat-abi=softfp -Os -Wall -Werror=return-type -fno-rtti -fno-threadsafe-statics -fno-exceptions  -std=gnu++11 -ffunction-sections -fdata-sections -DVexV5 -Iinclude -I"/Users/darius/sdk/vexv5/include" -I"/Users/darius/sdk/vexv5/clang/8.0.0/include" -I"/Users/darius/sdk/vexv5/gcc/include"  -I"/Users/darius/sdk/vexv5/gcc/include/c++/4.9.3"  -I"/Users/darius/sdk/vexv5/gcc/include/c++/4.9.3/arm-none-eabi/armv7-ar/thumb" -c -o build/src/main.o src/main.cpp
+mkdir -p "build/src" 2> /dev/null || :
+echo "CXX src/robot-config.cpp"
+clang -target thumbv7-none-eabi -fshort-enums -Wno-unknown-attributes -U__INT32_TYPE__ -U__UINT32_TYPE__ -D__INT32_TYPE__=long -D__UINT32_TYPE__='unsigned long'  -march=armv7-a -mfpu=neon -mfloat-abi=softfp -Os -Wall -Werror=return-type -fno-rtti -fno-threadsafe-statics -fno-exceptions  -std=gnu++11 -ffunction-sections -fdata-sections -DVexV5 -Iinclude -I"/Users/darius/sdk/vexv5/include" -I"/Users/darius/sdk/vexv5/clang/8.0.0/include" -I"/Users/darius/sdk/vexv5/gcc/include"  -I"/Users/darius/sdk/vexv5/gcc/include/c++/4.9.3"  -I"/Users/darius/sdk/vexv5/gcc/include/c++/4.9.3/arm-none-eabi/armv7-ar/thumb" -c -o build/src/robot-config.o src/robot-config.cpp
+echo "LINK build/bobby.elf"
+arm-none-eabi-ld -nostdlib -T "/Users/darius/sdk/vexv5/lscript.ld" -R "/Users/darius/sdk/vexv5/stdlib_0.lib" -Map="build/bobby.map" --gc-section -L"/Users/darius/sdk/vexv5" -L"/Users/darius/sdk/vexv5/gcc/libs" -o build/bobby.elf build/src/main.o build/src/robot-config.o --start-group -lv5rt -lstdc++ -lc -lm -lgcc --end-group
+arm-none-eabi-size build/bobby.elf
+arm-none-eabi-objcopy -O binary build/bobby.elf build/bobby.bin
+make: Leaving directory `/Users/darius/Documents/bing chilling/VEX/files/bobby'
+ 
